@@ -1,0 +1,79 @@
+<h1>Listado de clientes</h1>
+<div align="center">
+<% form_tag request.path, :method => 'get' do %>
+<% content_tag :label do %>
+<b>Buscar Cliente: </b>
+<%= text_field_tag :search, params[:search],
+   { :class => "campo",
+                :size => 35,
+                :maxlength => 80,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" }%>
+<%= submit_tag "Consultar", :nombre => nil %>
+<% end %>
+<% end %>
+</div>
+
+<br></br>
+<table id="box-table-a">
+  <tr id="titulotr">
+    <th>Nit</th>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Cedula</th>
+    <th>Email</th>
+    <th>Pdf</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @clientes.each do |cliente| %>
+  <tr class="<%= cycle('pair','odd') %>">
+    <td><%=h cliente.nit %></td>
+    <td><%=h cliente.nombre %></td>
+    <td><%=h cliente.apellido %></td>
+    <td><%=h cliente.cedula %></td>
+    <td><%=h cliente.email %></td>
+
+
+    <td><%= link_to  image_tag("pdf.gif",{ :border => 0,:size => '35x35', :title => "Ver PDF" }), cliente_path(cliente, :format => 'pdf') %></td>
+    
+    <td><%= link_to 'Articulos', cliente_articulos_clientes_path(cliente)%>  </td>
+    <td><%= link_to 'Tipo de Contacto', cliente_contactos_path(cliente) %></td>
+
+    <td id="op">
+       <a href="/clientes/<%=cliente.id.to_s%>"
+          onclick="return GB_showCenter('<%=cliente.nombre%>', this.href, 300, 600)">
+              <%= image_tag('find.png', { :border => 0, :title => "Ver más" })%></a>
+    </td>
+
+
+     <td id="op">
+       <a href="/clientes/<%=cliente.id.to_s%>/edit"
+          onclick="return GB_showCenter('Editar a : <%=cliente.nombre%>', this.href, 270, 700)">
+              <%= image_tag('edit.png', { :border => 0, :title => "Editar" })%></a></td>
+
+   <td  id="op" class="icono"><%= link_to image_tag('cross.png',
+                {:border=>0,
+                :title=> "Eliminar Articulo"}),
+                cliente, :confirm => 'Esta usted Seguro de Eliminar estos datos?', :method => :delete %></td>
+  </tr>
+
+<% end %>
+</table>
+
+<br />
+<div align="center">
+<%= will_paginate @clientes, :previous_label => 'Anterior', :next_label => 'Siguiente' %>
+ Total Clientes : <%= @clientes.total_entries %> &nbsp;&nbsp;&nbsp;&nbsp;
+  <td><%= link_to image_tag('Ver todos',{ :border=>0,:width=>40,:heigth=>40,:title => "Ver todos"}), clientes_path%></td>
+</div>
+
+  <br></br>
+     <td>
+       <a href="/clientes/new"
+          onclick="return GB_showCenter('Nuevo Cliente', this.href,270, 700)">
+              <%= image_tag('nuevo_cliente.png', { :border => 0, :size => "150x30", :title => "Nuevo Cliente" })%></a>
+    </td>

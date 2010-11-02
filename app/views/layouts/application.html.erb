@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <title>.:FlexiStock:.</title>
+    <%= javascript_include_tag '/javascripts/script.js' %>
+    <!--<script type="text/javascript" src="script.js"></script>-->
+
+    <%= stylesheet_link_tag 'style' %>
+
+     <script type="text/javascript">
+       var GB_ROOT_DIR = "/greybox/";
+     </script>
+
+<%= stylesheet_link_tag 'scaffold', '/greybox/gb_styles' %>
+<%= javascript_include_tag :defaults %>
+<%= javascript_include_tag '/greybox/AJS' %>
+<%= javascript_include_tag '/greybox/AJS_fx' %>
+<%= javascript_include_tag '/greybox/gb_scripts' %>
+<%= javascript_include_tag  "application" %>
+    <!--[if IE 6]><link rel="stylesheet" href="style.ie6.css" type="text/css" media="screen" /><![endif]-->
+    <!--[if IE 7]><link rel="stylesheet" href="style.ie7.css" type="text/css" media="screen" /><![endif]-->
+</head>
+<body>
+<div id="art-page-background-simple-gradient">
+    </div>
+    <div id="art-page-background-glare">
+        <div id="art-page-background-glare-image"></div>
+    </div>
+    <div id="art-main">
+        <div class="art-Sheet">
+            <div class="art-Sheet-tl"></div>
+            <div class="art-Sheet-tr"></div>
+            <div class="art-Sheet-bl"></div>
+            <div class="art-Sheet-br"></div>
+            <div class="art-Sheet-tc"></div>
+            <div class="art-Sheet-bc"></div>
+            <div class="art-Sheet-cl"></div>
+            <div class="art-Sheet-cr"></div>
+            <div class="art-Sheet-cc"></div>
+            <div class="art-Sheet-body">
+                <div class="art-Header">
+                    <div class="art-Header-png"></div>
+                    <div class="art-Header-jpeg"></div>
+
+                </div>
+                <div class="art-nav">
+                	<div class="l"></div>
+                	<div class="r"></div>
+                    <!--ESPACIO PARA MENÚ-->
+               <ul class="art-menu">
+                    <% if current_user %>
+                	<li>
+                        <a href="<%= articulos_path %>" class="{ActiveItem}"><span class="l"></span><span class="r"></span><span class="t">Artículos</span></a>
+                        </li>
+                	<li>
+                	  <a href="<%= clientes_path %>"><span class="l"></span><span class="r"></span><span class="t">Clientes</span></a>
+                	</li>                    
+                                           
+                        <li>
+                	<a href="<%= lineas_productos_path %>"><span class="l"></span><span class="r"></span><span class="t">líneas de productos</span></a>
+                	</li>                      
+                        <!--<li>
+                	  <a href="<#%= movimientos_inventarios_path %>"><span class="l"></span><span class="r"></span><span class="t">movimientos</span></a>
+                	</li>
+                        <li>
+                	  <a href="<#%= tipos_movimientos_path %>"><span class="l"></span><span class="r"></span><span class="t">Tipos de Movimiento</span></a>
+                	</li>-->
+                        <li>
+                	  <a href="<%= proveedores_path %>"><span class="l"></span><span class="r"></span><span class="t">Proveedores</span></a>
+                	</li>
+                        <%= link_to "#{current_user.login}", account_path if current_user %>
+                        <%= link_to image_tag("/images/salir.png",{:border=>0, :width=>35,
+                                                                   :height=>35,
+                                                                   :margin=>10,
+                                                                   :title=> "Desconectarse"}),
+                        user_session_path, :method => :delete, :confirm => "Está seguro de Desconectarse?"  %>
+                        
+
+                    <% end %>
+               </ul>
+                    <!--ESPACIO PARA MENÚ-->
+                </div>
+                <div class="art-contentLayout">
+                    <div class="art-content">
+                      <div class="art-Post">
+                       <div class="art-Post-body">
+                        <div class="art-Post-inner">
+                          <div class="art-PostContent" align="center">
+                           <!--ESPACIO PARA INSERCION DE CODIGO RUBY-->
+                                  <p>
+                                    <div id="notice">
+                                      <%= flash[:notice] %>
+                                    </div>
+                                    <div id="yield">
+                                      <%= yield  %>
+                                    </div>
+                                  </p>
+                           <!--ESPACIO PARA INSERCION DE CODIGO RUBY-->
+		         </div>
+                         </div>
+                        </div>
+                       </div>
+                    </div>
+                </div>
+                <div class="cleared"></div>
+                <div class="art-Footer">
+                    <div class="art-Footer-inner">
+                        <div class="art-Footer-text">
+                            <p>
+                                Copyright &copy; 2010 | FlexiStock
+                            </p>
+                        </div>
+                    </div>
+                    <div class="art-Footer-background"></div>
+                </div>
+        		<div class="cleared"></div>
+            </div>
+        </div>
+        <div class="cleared"></div>
+        <p class="art-page-footer">
+            Software desarrollado por Diego Quintero,Jonathan Flórez y Juan Camilo Ríos
+            <br/>
+            SERVICO NACIONAL DE APRENDIZAJE  ADSI - 28050
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<h1>Tipo de Contacto: <%=@cliente.nombrecompleto%> </h1>
+
+<table>
+  <tr>
+    <th>Descripción</th>
+    <th>Tipo contacto</th>
+  </tr>
+
+<% @contactos.each do |contacto| %>
+  <tr>
+    <td><%=h contacto.descripcion %></td>
+    <td><%=h contacto.tipo_contacto %></td>
+    <td><%= link_to 'Editar', edit_cliente_contacto_path(@cliente, contacto) %></td>
+    <td><%= link_to 'Eliminar', cliente_contacto_path(@cliente, contacto), :confirm => 'Esta seguro?', :confirm => 'NO se podran recuperar los datos?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo contacto', new_cliente_contacto_path %>

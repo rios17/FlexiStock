@@ -1,0 +1,17 @@
+<br></br>
+<table align="center" id="box-table-a">
+<tr class="<%= cycle('odd','pair') %>">
+  <td>Cantidad:</td>
+  <td><%=h @existenciasede.cantidad %></td>
+</tr>
+
+<tr class="<%= cycle('odd','pair') %>">
+  <td>Sede:</td>
+  <td><%=h @existenciasede.sede.nombre %></td>
+</tr>
+
+<tr class="<%= cycle('odd','pair') %>">
+  <td>Artículo:</td>
+  <td><%=h @existenciasede.articulo.nombre %></td>
+</tr>
+</table>

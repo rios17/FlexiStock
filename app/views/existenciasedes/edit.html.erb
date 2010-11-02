@@ -1,0 +1,11 @@
+<h1 align="center">Editar existencia del articulo: <%=h @articulo.nombre %></h1>
+
+ <% form_for([@articulo,@existenciasede]) do |f| %>
+ <%= f.error_messages %>
+ <%= render :partial => "form",:locals =>{:f => f} %>
+
+<br></br>
+  <div>
+    <%= f.submit 'Actualizar' %>
+  </div>
+<% end %>

@@ -1,0 +1,31 @@
+development:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: inventarios
+  pool: 5
+  username: root
+  password: rios
+  #socket: /var/run/mysqld/mysqld.sock
+  host: localhost
+
+test:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: inventarios_test
+  pool: 5
+  username: root
+  password: root
+  socket: /var/run/mysqld/mysqld.sock
+
+production:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: inventarios_production
+  pool: 5
+  username: root
+  password: root
+  socket: /var/run/mysqld/mysqld.sock
+

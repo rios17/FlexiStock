@@ -1,0 +1,17 @@
+<h1>Modificar la materia prima a : <%=@articulo.articuloreferencia%></h1>
+
+<% form_for :materiasprima, @materiasprima,
+:url => articulo_materiasprima_path(@articulo, @materiasprima),
+:html => {:method => :put} do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :material %><br />
+    <%= f.text_field :material %>
+  </p>
+  <p>
+    <%= f.submit 'Actualizar' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', articulo_materiasprimas_path %>

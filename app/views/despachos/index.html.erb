@@ -1,0 +1,22 @@
+<h1>Listado de Despachos</h1>
+
+<table>
+  <tr>
+    <th>Cantidad</th>
+    <th>Fecha despacho</th>
+    <th>Cliente</th>
+  </tr>
+
+<% @despachos.each do |despacho| %>
+  <tr>
+    <td><%=h despacho.cantidad %></td>
+    <td><%=h despacho.fecha_despacho %></td>
+    <td><%= link_to 'Edit', edit_articulos_cliente_despacho_path(@articulos_cliente, despacho) %></td>
+    <td><%= link_to 'Destroy', despacho, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New despacho', new_articulos_cliente_despacho_path %>

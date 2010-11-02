@@ -1,0 +1,23 @@
+<h1>Lineas de productos</h1>
+
+<table id="box-table-a">
+  <tr id="titulotr" >
+    <th>Descripción</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @lineas_productos.each do |lineas_producto| %>
+  <tr>
+    <td><%=h lineas_producto.descripcion %></td>
+    <td><%= link_to 'ver', lineas_producto %></td>
+    <td><%= link_to 'Editar', edit_lineas_producto_path(lineas_producto) %></td>
+    <td><%= link_to 'Eliminar', lineas_producto, :confirm => 'Esta usted seguro?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nueva linea de producto', new_lineas_producto_path %>

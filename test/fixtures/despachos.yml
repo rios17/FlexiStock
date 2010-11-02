@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  cantidad: 1
+  fecha_despacho: 2010-08-24 14:10:51
+  cliente_id: 1
+
+two:
+  cantidad: 1
+  fecha_despacho: 2010-08-24 14:10:51
+  cliente_id: 1

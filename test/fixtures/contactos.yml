@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  descripcion: MyString
+  tipo_contacto: MyString
+  cliente_id: 1
+
+two:
+  descripcion: MyString
+  tipo_contacto: MyString
+  cliente_id: 1

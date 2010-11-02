@@ -1,0 +1,22 @@
+<h1>Listing departamentos</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Pais</th>
+  </tr>
+
+<% @departamentos.each do |departamento| %>
+  <tr>
+    <td><%=h departamento.name %></td>
+    <td><%=h departamento.pais_id %></td>
+    <td><%= link_to 'Show', departamento %></td>
+    <td><%= link_to 'Edit', edit_departamento_path(departamento) %></td>
+    <td><%= link_to 'Destroy', departamento, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New departamento', new_departamento_path %>

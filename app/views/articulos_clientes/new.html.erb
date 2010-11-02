@@ -1,0 +1,32 @@
+<%= javascript_include_tag :defaults %>
+<h1>Articulos de: <%=@cliente.nombrecompleto %></h1>
+
+<!--<#form_for(@articulos_cliente) do |f| %>-->
+<% form_for(:articulos_cliente, @articulos_cliente, :url => cliente_articulos_clientes_path(@cliente)) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+     <b>Escoja el articulo</b><br />
+     <select id="articulos_cliente_articulo_id" name="articulos_cliente[articulo_id]">
+         <%= options_from_collection_for_select(@articulos, "id", "articuloreferencia", @articulos_cliente.articulo_id ) %>
+     </select>
+  </p>
+  <p>
+      <p>
+    <%= f.label :Cantidad %><br />
+    <%= f.text_field :total_articulos %>
+  </p>
+
+  </p>
+    <p>
+     <b>Sede</b><br />
+     <select id="articulos_cliente_sede_id" name="articulos_cliente[sede_id]">
+         <%= options_from_collection_for_select(@sedes, "id", "nombre", @articulos_cliente.sede_id ) %>
+     </select>
+  </p>
+  <p>
+    <%= f.submit 'Crear' %>
+  </p>
+<% end %>
+
+<%= link_to 'Atras', cliente_articulos_clientes_path %>

@@ -1,0 +1,18 @@
+<p>
+  <b>Cantidad:</b>
+  <%=h @despacho.cantidad %>
+</p>
+
+<p>
+  <b>Fecha despacho:</b>
+  <%=h @despacho.fecha_despacho %>
+</p>
+
+<p>
+  <b>Cliente:</b>
+  <%=h @despacho.cliente_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_despacho_path(@despacho) %> |
+<%= link_to 'Back', despachos_path %>

@@ -1,0 +1,75 @@
+<h1>Listado de Existencias por Sedes</h1>
+
+<div align="center">
+<% form_tag request.path, :method => 'get' do %>
+<% content_tag :label do %>
+<b>Buscar Existencia: </b>
+<%= text_field_tag :search, params[:search],
+   { :class => "campo",
+                :size => 35,
+                :maxlength => 80,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" }%>
+<%= submit_tag "Consultar", :cantidad => nil %>
+<% end %>
+<% end %>
+</div>
+<br></br>
+<table id="box-table-a">
+  <tr id="titulotr">
+    <th>Cantidad</th>
+    <th>Sede</th>
+    <th>Artículo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @existenciasedes.each do |existenciasede| %>
+   <tr class="<%= cycle('odd','pair') %>">
+    <td><%=h existenciasede.cantidad %></td>
+    <td><%=h existenciasede.sede.nombre %></td>
+    <td><%=h existenciasede.articulo.nombre%></td>
+    
+
+        <td>
+         <a href="/articulos/<%=existenciasede.articulo_id.to_s%>/existenciasedes/<%=existenciasede.id.to_s%>"
+          onclick="return GB_showCenter(' <%=existenciasede.articulo.nombre%>', this.href, 300, 600)">
+              <%= image_tag('find.png', { :border => 0, :title => "Ver Existencia" })%></a></td>
+
+          <td>
+         <a href="/articulos/<%=existenciasede.articulo_id.to_s%>/existenciasedes/<%=existenciasede.id.to_s%>/edit"
+          onclick="return GB_showCenter('Editar Existencia de:  <%=existenciasede.articulo.nombre%>', this.href, 230, 550)">
+              <%= image_tag('edit.png', { :border => 0, :title => "Editar esta Existencia" })%></a></td>
+
+      <td><%= link_to image_tag('cross.png',
+            {:border=>0,
+             :width=>15,
+             :height=>15,
+             :title => "Eliminar esta Compra"}),
+      articulo_existenciasede_path(@articulo,existenciasede), :confirm => 'Está usted seguro de Eliminar la compra?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<div align="center">
+<%= will_paginate @existenciasedes, :previous_label => 'Anterior', :next_label => 'Siguiente' %>
+ Total Sedes : <%= @existenciasedes.total_entries %> &nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+<br></br>
+<br />
+<div align="center">
+<a href="<%= new_articulo_existenciasede_path(@articulo) %>"
+          onclick="return GB_showCenter('Agregar Nueva Existencia', this.href, 260, 550)">
+              <%= image_tag('Agregar Existencia', { :border => 0, :title => "Agregar Existencia" })%></a>
+</div>
+<br></br>
+<div align="center">
+   <%= link_to image_tag('Atrás',
+             {:border=>0,
+             :width=>25,
+             :height=>25,
+             :title => "Atrás"}),
+    articulos_path %>
+</div>

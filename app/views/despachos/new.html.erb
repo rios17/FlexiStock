@@ -1,0 +1,20 @@
+<h1>Fecha definida para el despacho de: </h1>
+
+<!--<#% form_for(@despacho) do |f| %>-->
+<% form_for(:despacho, @despacho, :url => articulos_cliente_despachos_path(@articulos_cliente)) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :cantidad %><br />
+    <%= f.text_field :cantidad %>
+  </p>
+  <p>
+    <%= f.label :fecha_despacho %><br />
+    <%= f.datetime_select :fecha_despacho %>
+  </p>
+  <p>
+    <%= f.submit 'Crear' %>
+  </p>
+<% end %>
+
+<%= link_to 'Atrás', articulos_cliente_despachos_path %>

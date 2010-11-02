@@ -1,0 +1,19 @@
+<table align="center" id="box-table-a">
+  <tr class="<%= cycle('odd','pair') %>">
+    <td><%= f.label :cantidad %></td>
+    <td><%= f.text_field :cantidad,
+              { :class => "campo",
+                :size => 50,
+                :maxlength => 80,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" } %>
+  </td>
+  </tr>
+
+   <tr class="<%= cycle('pair','odd') %>">
+    <td>Sede</td>
+    <td><select id="existenciasede_sede_id" name="existenciasede[sede_id]">
+         <%= options_from_collection_for_select(@sedes, "id", "nombre", @existenciasede.sede_id ) %>
+      </select></td>
+  </tr>
+</table>

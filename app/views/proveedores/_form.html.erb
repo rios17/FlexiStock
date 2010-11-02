@@ -1,0 +1,63 @@
+<table id="box-table-a">
+  
+<tr class="<%= cycle('odd','pair') %>">
+    <td><%= f.label :nombres %></td>
+    <td><%= f.text_field :nombres,
+                  { :class => "campo",
+                :size => 50,
+                :maxlength => 80,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" } %>
+  </td>
+  </tr>
+<tr class="<%= cycle('odd','pair') %>">
+    <td><%= f.label :apellidos %></td>
+    <td><%= f.text_field :apellidos,
+              { :class => "campo",
+                :size => 50,
+                :maxlength => 80,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" } %>
+    </td>
+  </tr>
+ <tr class="<%= cycle('odd','pair') %>">
+    <td><%= f.label :cedula %></td>
+    <td><%= f.text_field :cedula,
+              { :class => "campo",
+                :size => 50,
+                :maxlength => 80,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" } %>
+  </td>
+  </tr>
+<tr class="<%= cycle('odd','pair') %>">
+    <td><%= f.label :direccion %></td>
+    <td><%= f.text_field :direccion,
+                  { :class => "campo",
+                :size => 50,
+                :maxlength => 80,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" } %>
+  </td>
+  </tr>
+ <tr class="<%= cycle('odd','pair') %>">
+    <td><%= f.label :email %></td>
+    <td><%= f.text_field :email,
+              { :class => "campo",
+                :size => 50,
+                :maxlength => 80,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" } %>
+  </td>
+  </tr>
+ <tr class="<%= cycle('odd','pair') %>">
+    <td><%= f.label :telefono %></td>
+    <td><%= f.text_field :telefono,
+              { :class => "campo",
+                :size => 50,
+                :maxlength => 80,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" } %>
+  </td>
+  </tr>
+</table>

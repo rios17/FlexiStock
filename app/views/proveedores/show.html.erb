@@ -1,0 +1,31 @@
+<table id="box-table-a" id="showarticulo" >
+<tr class="<%= cycle('odd','pair') %>">
+  <td><b>Nombres:</b></td>
+  <td><%=h @proveedor.nombres %></td>
+</tr>
+
+<tr class="<%= cycle('odd','pair') %>">
+  <td>Apellidos:</td>
+  <td><%=h @proveedor.apellidos %></td>
+</tr>
+
+<tr class="<%= cycle('odd','pair') %>">
+  <td>Cedula:</td>
+  <td><%=h @proveedor.cedula %></td>
+</tr>
+
+<tr class="<%= cycle('odd','pair') %>">
+  <td>Direccion:</td>
+  <td><%=h @proveedor.direccion %></td>
+</tr>
+
+<tr class="<%= cycle('odd','pair') %>">
+  <td>Email:</td>
+  <td><%=h @proveedor.email %></td>
+</tr>
+
+<tr class="<%= cycle('odd','pair') %>">
+  <td>Telefono:</td>
+  <td><%=h @proveedor.telefono %></td>
+</tr>
+</table>

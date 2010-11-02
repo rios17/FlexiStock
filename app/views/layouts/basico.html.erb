@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "­//W3C//DTD XHTML 1.0 Transitional//EN"
+           "http://www.w3.org/TR/xhtml1/DTD/xhtml1­transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+   <meta http­equiv="content­type" content="text/html;charset=UTF­8" />
+   <title>.:FlexiStock:. Desarrollo</title>
+   <%= stylesheet_link_tag 'scaffold' %>
+
+ <script type="text/javascript">
+    var GB_ROOT_DIR = "/greybox/";
+</script>
+
+<%= stylesheet_link_tag 'scaffold', '/greybox/gb_styles' %>
+<%= javascript_include_tag :defaults %>
+<%= javascript_include_tag '/greybox/AJS' %>
+<%= javascript_include_tag '/greybox/AJS_fx' %>
+<%= javascript_include_tag '/greybox/gb_scripts' %>
+<%= javascript_include_tag  "application" %>
+
+</head>
+<body>
+  <div id="content" align="center">
+
+      <div id="notice">
+          <%= flash[:notice] %>
+      </div>
+      <div id="yield">
+              <%= yield  %>
+      </div>
+   </div>
+</body>
+</html>
+

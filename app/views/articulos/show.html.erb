@@ -1,0 +1,75 @@
+<br></br>
+
+<table id="showarticulo">
+  <td>
+  <table>
+                
+  <tr align="center">
+    <td>
+    <%= image_tag @articulo.foto.url(:small) %>
+    </td>
+  </tr>
+ </table>
+  </td>
+
+  <td>
+    <table width="50">
+
+    </table>
+  </td>
+
+  <td>
+    <table id="box-table-a" >
+
+
+  <tr class="odd">
+           <td align="right" width="198" id="dos"><b>Nombre:</b></td>
+          <td align="left" width="111"><%=h @articulo.nombre %></td>
+        </tr>
+
+         <tr  class="pair">
+           <td align="right" ><b>Referencia:</b></td>
+             <td align="left" >     <%=h @articulo.referencia %></td>
+         </tr>
+
+         <tr  class="odd">
+           <td align="right" ><b>Linea producto:</b></td>
+              <td align="left" >   <%=h @articulo.lineas_producto.descripcion %>
+           </td>
+         </tr>
+
+         <tr  class="pair">
+           <td align="right" ><b>Marca:</b></td>
+ <td align="left" > <%=h @articulo.marca %></td>
+         </tr>
+
+         <tr  class="odd">
+           <td align="right" ><b>Peso:</b></td>
+ <td align="left" > <%=h @articulo.peso   %>
+           </td>
+         </tr>
+
+         <tr  class="pair">
+           <td align="right" ><b>Talla:</b></td>
+ <td align="left" > <%=h @articulo.talla %></td>
+         </tr>
+         <tr  class="odd">
+           <td align="right" ><b>Lote:</b></td>
+<td align="left" >  <%=h @articulo.lote %></td>
+         </tr>
+
+       <tr  class="pair">
+           <td align="right" ><b>Ubicación:</b></td>
+<td align="left" >  <%=h @articulo.ubicacion %></td>
+         </tr>
+
+       <tr  class="odd">
+           <td align="right" ><b>Color:</b></td>
+<td align="left" >  <%=h @articulo.color.tipo_color%></td>
+         </tr>
+
+         </table>
+  </td>
+
+
+</table>

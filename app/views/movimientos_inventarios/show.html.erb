@@ -1,0 +1,23 @@
+<p>
+  <b>Cantidad:</b>
+  <%=h @movimientos_inventario.cantidad %>
+</p>
+
+<p>
+  <b>Fecha:</b>
+  <%=h @movimientos_inventario.fecha %>
+</p>
+
+<p>
+  <b>Tipo movimiento:</b>
+  <%=h @movimientos_inventario.tipo_movimiento_id %>
+</p>
+
+<p>
+  <b>Articulo:</b>
+  <%=h @movimientos_inventario.articulo_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_movimientos_inventario_path(@movimientos_inventario) %> |
+<%= link_to 'Back', movimientos_inventarios_path %>

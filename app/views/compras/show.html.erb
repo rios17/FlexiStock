@@ -1,0 +1,28 @@
+<br></br>
+<table align="center" id="box-table-a" id="showarticulo" >
+<tr class="<%= cycle('odd','pair') %>">
+  <td>Fecha:</td>
+  <td><%=h @compra.fecha %></td>
+</tr>
+
+<tr class="<%= cycle('odd','pair') %>">
+  <td>Articulo:</td>
+<td><%=h @compra.articulo %></td>
+</tr>
+
+<tr class="<%= cycle('odd','pair') %>">
+  <td>Cantidad:</td>
+  <td><%=h @compra.cantidad %></td>
+</tr>
+
+<tr class="<%= cycle('odd','pair') %>">
+  <td>Precio:</td>
+  <td><%=h @compra.precio %></td>
+</tr>
+
+<tr class="<%= cycle('odd','pair') %>">
+  <td>Proveedor:</td>
+  <td><%=h @compra.proveedor.nombres %></td>
+</tr>
+
+</table>

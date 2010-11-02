@@ -1,0 +1,15 @@
+<h1>New lineas_producto</h1>
+
+<% form_for(@lineas_producto) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :descripcion %><br />
+    <%= f.text_field :descripcion %>
+  </p>
+  <p>
+    <%= f.submit 'Crear' %>
+  </p>
+<% end %>
+
+<%= link_to 'Atrás', lineas_productos_path %>

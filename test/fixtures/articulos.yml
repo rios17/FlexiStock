@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nombre: MyString
+  referencia: MyString
+  linea_producto_id: 1
+
+two:
+  nombre: MyString
+  referencia: MyString
+  linea_producto_id: 1

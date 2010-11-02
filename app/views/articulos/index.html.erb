@@ -1,0 +1,94 @@
+<h1>Listado de Artículos</h1>
+<div align="center">
+<% form_tag request.path, :method => 'get' do %>
+<% content_tag :label do %>
+<b>Buscar Articulo: </b>
+<%= text_field_tag :search, params[:search],
+   { :class => "campo",
+                :size => 35,
+                :maxlength => 80,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" }%>
+<%= submit_tag "Consultar", :nombre => nil %>
+<% end %>
+<% end %>
+</div>
+
+<br></br>
+
+<table id="box-table-a">
+  <tr id="titulotr">
+    <th>Nombre</th>
+    <th>Referencia</th>
+    <th>Linea producto</th>
+    <th>Existencias</th>
+    <th>pdf</th>
+  </tr>
+
+<% @articulos.each do |articulo| %>
+ <tr class="<%= cycle('odd','pair') %>">
+    <td><%=h articulo.nombre %></td>
+    <td><%=h articulo.referencia %></td>
+    <td><%=h articulo.lineas_producto.descripcion %></td>
+    
+    <td><%= link_to 'Materias Primas', articulo_materiasprimas_path(articulo) %></td>
+    <td><%= link_to 'Existencias', articulo_existenciasedes_path(articulo) %>
+       (<%= articulo.existenciasedes.sum('cantidad') %>)</td>
+
+<td><%= link_to  image_tag("pdf.gif",{ :border => 0,:size => '35x35', :title => "Generar PDF" }), articulo_path(articulo, :format => 'pdf') %></td>
+
+   
+    <td>
+       <a href="/articulos/<%=articulo.id.to_s%>"
+          onclick="return GB_showCenter('<%=articulo.nombre%>', this.href, 330, 600)">
+              <%= image_tag('find.png', { :border => 0, :title => "Ver más" })%></a>
+    </td>
+   
+
+
+     <td >
+       <% if can? :edit, Articulo %>
+       <a href="/articulos/<%=articulo.id.to_s%>/edit"
+          onclick="return GB_showCenter('<%=articulo.nombre%>', this.href, 300, 700)">
+              <%= image_tag('edit.png', { :border => 0, :title => "Editar" })%></a><%end%></td>
+   
+
+   <% if can? :delete, Articulo %>
+   <td class="icono"><%= link_to image_tag('cross.png',
+                {:border=>0,
+                :title=> "Eliminar Articulo"}),
+                articulo, :confirm => 'Esta usted Seguro de Eliminar estos datos? no podrá recuperar ni deshacer los cambios.', :method => :delete %></td>
+  <%end%>
+
+
+      <td id="op">
+         <a href="<%=estadisticas_articulos_path(:id => articulo.id)%>"
+          onclick="return GB_showCenter('Ver Estadística', this.href, 400, 700)">
+              <%= image_tag('estadistica.jpg', { :border => 0, :title => "Ver Experiencia" })%></a></td>
+
+
+  </tr>
+<% end %>
+</table>
+
+<br />
+<div align="center">
+<%= will_paginate @articulos, :previous_label => 'Anterior', :next_label => 'Siguiente' %>
+  Total Artículos : <%= @articulos.total_entries %> &nbsp;&nbsp;&nbsp;&nbsp;
+  <td><%= link_to image_tag('Ver todos',{ :border=>0,:width=>40,:heigth=>40,:title => "Ver todos"}), articulos_path%></td>
+</div>
+
+  <br></br>
+
+  
+     <td>
+       
+           <% if can? :new, Articulo %>
+     <td>
+       
+              <%= link_to image_tag('nuevo_articulo.png', {:border=>0,:width=>150,:heigth=>30,:title => "Nuevo Artículo" }), new_articulo_path %>
+    </td>
+   <%end%>
+
+           
+    </td>

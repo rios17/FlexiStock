@@ -1,0 +1,18 @@
+<h1>Editar articulos del cliente</h1>
+
+<% form_for(@articulos_cliente) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+     <b>Escoja el articulo</b><br />
+     <select id="articulos_cliente_articulo_id" name="articulos_cliente[articulo_id]">
+         <%= options_from_collection_for_select(@articulos, "id", "articuloreferencia", @articulos_cliente.articulo_id ) %>
+     </select>
+  </p>
+
+  <p>
+    <%= f.submit 'Actualizar' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', articulos_clientes_path %>

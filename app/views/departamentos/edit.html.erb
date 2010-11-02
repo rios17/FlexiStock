@@ -1,0 +1,20 @@
+<h1>Editing departamento</h1>
+
+<% form_for(@departamento) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :pais_id %><br />
+    <%= f.text_field :pais_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @departamento %> |
+<%= link_to 'Back', departamentos_path %>

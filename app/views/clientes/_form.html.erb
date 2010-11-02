@@ -1,0 +1,105 @@
+<%= javascript_include_tag :defaults %>
+<%= stylesheet_link_tag 'chain_selects' %>
+
+<table class="piepagina2" id="box-table-a">
+  <td>
+
+    <table>
+          <tr class="<%= cycle('pair','odd') %>">
+    <td  id="texa"><div><b>Foto</b></div></td>
+    <td  id="texa"><%= f.file_field :foto,{
+                         :size => 15,
+                         :maxlength => 60,
+                         :title => "Recuerde ingresar su foto",
+                         :onFocus => "this.style.border='1px solid #f00'",
+                         :onBlur => "this.style.border='1px solid #bbb'" }%>
+    </td>
+  </tr>
+  
+      <tr>
+    <td><%= f.label :nit %></td>
+    <td><%= f.text_field :nit,
+   { :class => "campo",
+                :size => 30,
+                :maxlength => 50,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" }%></td>
+  </tr>
+
+  <tr>
+  <td><%= f.label :nombre %></td>
+  <td><%= f.text_field :nombre,
+   { :class => "campo",
+                :size => 30,
+                :maxlength => 50,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" }%></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :apellido %></td>
+    <td><%= f.text_field :apellido,
+   { :class => "campo",
+                :size => 30,
+                :maxlength => 50,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" }%></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :cedula %></td>
+    <td><%= f.text_field :cedula,
+   { :class => "campo",
+                :size => 30,
+                :maxlength => 50,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" }%></td>
+  </tr>
+    </table>
+  </td>
+
+
+  <td>
+    <table width="60">
+
+    </table>
+  </td>
+
+  <td>
+    <table>
+
+
+          <br/>
+
+
+  <tr>
+    <td><%= f.label :email %></td>
+    <td><%= f.text_field :email,
+   { :class => "campo",
+                :size => 30,
+                :maxlength => 50,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" }%></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :direccion %></td>
+    <td><%= f.text_field :direccion,
+   { :class => "campo",
+                :size => 30,
+                :maxlength => 50,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" }%></td>
+  </tr>
+
+
+
+
+
+
+    </table>
+  </td>
+  <%= chain_select_ajax(:models => [:pais, :departamento, :municipio]) %> 
+  </table>
+
+ 

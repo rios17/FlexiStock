@@ -1,0 +1,11 @@
+
+  <% form_for(@articulo, :html => { :multipart => true }) do |f| %>
+  <%= f.error_messages %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+
+ <% if can? :update, Articulo %>
+  <p>
+    <%= f.submit 'Actualizar' %>
+  </p>
+  <%end%>
+<% end %>

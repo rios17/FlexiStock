@@ -1,0 +1,28 @@
+<h1>Editing movimientos_inventario</h1>
+
+<% form_for(@movimientos_inventario) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :cantidad %><br />
+    <%= f.text_field :cantidad %>
+  </p>
+  <p>
+    <%= f.label :fecha %><br />
+    <%= f.datetime_select :fecha %>
+  </p>
+  <p>
+    <%= f.label :tipo_movimiento_id %><br />
+    <%= f.text_field :tipo_movimiento_id %>
+  </p>
+  <p>
+    <%= f.label :articulo_id %><br />
+    <%= f.text_field :articulo_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @movimientos_inventario %> |
+<%= link_to 'Back', movimientos_inventarios_path %>

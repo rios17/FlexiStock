@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nit: MyString
+  nombre: MyString
+  apellido: MyString
+  cedula: MyString
+  email: MyString
+  direccion: MyString
+  municipio_id: 1
+  articulo_id: 1
+
+two:
+  nit: MyString
+  nombre: MyString
+  apellido: MyString
+  cedula: MyString
+  email: MyString
+  direccion: MyString
+  municipio_id: 1
+  articulo_id: 1

@@ -1,0 +1,26 @@
+<h1>Listing movimientos_inventarios</h1>
+
+<table>
+  <tr>
+    <th>Cantidad</th>
+    <th>Fecha</th>
+    <th>Tipo movimiento</th>
+    <th>Articulo</th>
+  </tr>
+
+<% @movimientos_inventarios.each do |movimientos_inventario| %>
+  <tr>
+    <td><%=h movimientos_inventario.cantidad %></td>
+    <td><%=h movimientos_inventario.fecha %></td>
+    <td><%=h movimientos_inventario.tipo_movimiento_id %></td>
+    <td><%=h movimientos_inventario.articulo_id %></td>
+    <td><%= link_to 'Show', movimientos_inventario %></td>
+    <td><%= link_to 'Edit', edit_movimientos_inventario_path(movimientos_inventario) %></td>
+    <td><%= link_to 'Destroy', movimientos_inventario, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New movimientos_inventario', new_movimientos_inventario_path %>

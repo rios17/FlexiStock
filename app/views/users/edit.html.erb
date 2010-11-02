@@ -1,0 +1,9 @@
+<h1>Editar mi Cuenta</h1>
+
+<% form_for @user, :url => account_path do |f| %>
+  <%= f.error_messages %>
+  <%= render :partial => "form", :object => f %>
+  <%= f.submit "Actualizar" %>
+<% end %>
+
+<br /><%= link_to "Mi Perfil", account_path %>

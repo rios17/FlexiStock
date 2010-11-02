@@ -1,0 +1,40 @@
+<table align="center">
+<tr class="<%= cycle('odd','pair') %>">
+    <td><%= f.label :fecha %></td>
+    <td><%= f.date_select :fecha %></td>
+  </tr>
+
+  <tr class="<%= cycle('odd','pair') %>">
+    <td><%= f.label :articulo %></td>
+    <td><%= f.text_field :articulo,
+            { :class => "campo",
+                :size => 50,
+                :maxlength => 80,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" } %>
+  </td>
+  </tr>
+
+  <tr class="<%= cycle('odd','pair') %>">
+    <td><%= f.label :cantidad %></td>
+    <td><%= f.text_field :cantidad,
+            { :class => "campo",
+                :size => 50,
+                :maxlength => 80,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" } %>
+  </td>
+  </tr>
+
+  <tr class="<%= cycle('odd','pair') %>">
+    <td><%= f.label :precio %></td>
+    <td><%= f.text_field :precio,
+            { :class => "campo",
+                :size => 50,
+                :maxlength => 80,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" } %>
+  </td>
+  </tr>
+
+</table>

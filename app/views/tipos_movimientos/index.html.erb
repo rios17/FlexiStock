@@ -1,0 +1,20 @@
+<h1>Listing tipos_movimientos</h1>
+
+<table>
+  <tr>
+    <th>Descripcion</th>
+  </tr>
+
+<% @tipos_movimientos.each do |tipos_movimiento| %>
+  <tr>
+    <td><%=h tipos_movimiento.descripcion %></td>
+    <td><%= link_to 'Show', tipos_movimiento %></td>
+    <td><%= link_to 'Edit', edit_tipos_movimiento_path(tipos_movimiento) %></td>
+    <td><%= link_to 'Destroy', tipos_movimiento, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New tipos_movimiento', new_tipos_movimiento_path %>

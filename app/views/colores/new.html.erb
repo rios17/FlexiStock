@@ -1,0 +1,15 @@
+<h1>Nuevo color</h1>
+
+<% form_for(@color) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :tipo_color %><br />
+    <%= f.text_field :tipo_color %>
+  </p>
+  <p>
+    <%= f.submit 'Crear' %>
+  </p>
+<% end %>
+
+<%= link_to 'Atrás', colores_path %>

@@ -1,0 +1,74 @@
+<h1>Listado de Proveedores</h1>
+
+<div align="center">
+<% form_tag request.path, :method => 'get' do %>
+<% content_tag :label do %>
+<b>Buscar Proveedor: </b>
+<%= text_field_tag :search, params[:search],
+   { :class => "campo",
+                :size => 35,
+                :maxlength => 80,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" }%>
+<%= submit_tag "Consultar", :nombres => nil %>
+<% end %>
+<% end %>
+</div>
+<br></br>
+
+<table id="box-table-a">
+  <tr id="titulotr">
+    <th>Nombres</th>
+    <th>Apellidos</th>
+    <th>Cedula</th>
+    <th>Direccion</th>
+    <th>Email</th>
+    <th>Telefono</th>
+    <th>Compras</th>
+  </tr>
+
+<% @proveedores.each do |proveedor| %>
+  <tr class="<%= cycle('odd','pair') %>">
+    <td><%=h proveedor.nombres %></td>
+    <td><%=h proveedor.apellidos %></td>
+    <td><%=h proveedor.cedula %></td>
+    <td><%=h proveedor.direccion %></td>
+    <td><%=h proveedor.email %></td>
+    <td><%=h proveedor.telefono %></td>
+
+  <td><%= link_to 'compras', proveedor_compras_path(proveedor) %></td>
+    
+        <td id="op">
+       <a href="/proveedores/<%=proveedor.id.to_s%>"
+          onclick="return GB_showCenter('<%=proveedor.nombres%>', this.href, 300, 600)">
+              <%= image_tag('find.png', { :border => 0, :title => "Ver más" })%></a>
+    </td>
+
+   <td id="op">
+       <a href="/proveedores/<%=proveedor.id.to_s%>/edit"
+          onclick="return GB_showCenter('Editar a : <%=proveedor.nombres%>', this.href, 270, 700)">
+              <%= image_tag('edit.png', { :border => 0, :title => "Editar" })%></a></td>
+
+
+     <td  id="op" class="icono"><%= link_to image_tag('cross.png',
+                {:border=>0,
+                :title=> "Eliminar Articulo"}),
+                proveedor, :confirm => 'Esta usted Seguro de Eliminar estos datos?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<div align="center">
+<%= will_paginate @proveedores, :previous_label => 'Anterior', :next_label => 'Siguiente' %>
+ Total Proveedores : <%= @proveedores.total_entries %> &nbsp;&nbsp;&nbsp;&nbsp;
+  <td><%= link_to image_tag('Ver todos',{ :border=>0,:width=>40,:heigth=>40,:title => "Ver todos"}), proveedores_path%></td>
+</div>
+
+<br></br>
+
+     <td>
+       <a href="/proveedores/new"
+          onclick="return GB_showCenter('Nuevo Proveedor', this.href,300, 700)">
+              <%= image_tag('nuevo_proveedor.png', {:border=>0,:width=>150,:heigth=>30,:title => "Nuevo Proveedor" })%></a>
+    </td>

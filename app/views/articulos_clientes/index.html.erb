@@ -1,0 +1,21 @@
+<h1>Artículos de: <%= @cliente.nombrecompleto %> </h1>
+
+<table>
+  <tr>
+    <th>Articulo</th>
+    <th>cantidad</th>
+  </tr>
+
+<% @articulos_clientes.each do |articulos_cliente| %>
+  <tr>
+    <td><%=h articulos_cliente.articulo.nombre %></td>
+    <td><%=h articulos_cliente.total_articulos %></td>
+    
+    <td><%= link_to 'Destroy', cliente_articulos_cliente_path(@cliente, articulos_cliente) , :confirm => 'Eliminar', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New articulos_cliente', new_cliente_articulos_cliente_path %>

@@ -1,0 +1,20 @@
+<h1>Editing municipio</h1>
+
+<% form_for(@municipio) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :departamento_id %><br />
+    <%= f.text_field :departamento_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @municipio %> |
+<%= link_to 'Back', municipios_path %>

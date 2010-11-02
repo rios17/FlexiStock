@@ -1,0 +1,67 @@
+
+<br></br>
+
+<table id="showcliente">
+  <td>
+  <table>
+
+  <tr align="center">
+    <td>
+    <%= image_tag @cliente.foto.url(:small) %>
+    </td>
+  </tr>
+ </table>
+  </td>
+
+  <td>
+    <table width="50">
+
+    </table>
+  </td>
+
+  <td>
+    <table id="box-table-a" >
+
+
+  <tr class="odd">
+           <td align="right" ><b>Nit:</b></td>
+          <td align="left"><%=h @cliente.nit %></td>
+        </tr>
+
+         <tr  class="pair">
+           <td align="right" ><b>Nombre:</b></td>
+             <td align="left" > <%=h @cliente.nombre %></td>
+         </tr>
+
+         <tr  class="odd">
+           <td align="right" ><b>Apellidos:</b></td>
+              <td align="left" > <%=h @cliente.apellido %>
+           </td>
+         </tr>
+
+         <tr  class="pair">
+           <td align="right" ><b>Cedula:</b></td>
+ <td align="left" > <%=h @cliente.cedula %></td>
+         </tr>
+
+         <tr  class="odd">
+           <td align="right" ><b>Email:</b></td>
+ <td align="left" > <%=h @cliente.email %>
+           </td>
+         </tr>
+
+         <tr  class="pair">
+           <td align="right" ><b>Dirección:</b></td>
+ <td align="left" > <%=h @cliente.direccion %></td>
+         </tr>
+         <tr  class="odd">
+           <td align="right" ><b>Municipio:</b></td>
+<td align="left" >  <%=h @cliente.municipio.name %></td>
+         </tr>
+
+
+         </table>
+  </td>
+
+
+</table>

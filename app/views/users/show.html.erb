@@ -1,0 +1,39 @@
+<p>
+  <b>Usuario:</b>
+  <%=h @user.login %>
+</p>
+
+<p>
+  <b>Cuenta Login:</b>
+  <%=h @user.login_count %>
+</p>
+
+<p>
+  <b>La última solicitud en:</b>
+  <%=h @user.last_request_at %>
+</p>
+
+<p>
+  <b>Último Login en:</b>
+  <%=h @user.last_login_at %>
+</p>
+
+<p>
+  <b>Entranda del login en:</b>
+  <%=h @user.current_login_at %>
+</p>
+
+<p>
+  <b>Ip de donde accesa:</b>
+  <%=h @user.last_login_ip %>
+</p>
+
+<p>
+  <b>IP de Entrada login:</b>
+  <%=h @user.current_login_ip %>
+</p>
+
+
+<%= link_to image_tag('editar.png',
+        { :border=>0,
+          :title => "Editar", :high=>50, :width=>50}), edit_account_path %>

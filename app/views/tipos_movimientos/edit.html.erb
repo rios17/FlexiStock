@@ -1,0 +1,16 @@
+<h1>Editing tipos_movimiento</h1>
+
+<% form_for(@tipos_movimiento) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :descripcion %><br />
+    <%= f.text_field :descripcion %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @tipos_movimiento %> |
+<%= link_to 'Back', tipos_movimientos_path %>

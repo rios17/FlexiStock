@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  cantidad: 1
+  sede_id: 1
+  existencia_id: 1
+
+two:
+  cantidad: 1
+  sede_id: 1
+  existencia_id: 1

@@ -1,0 +1,13 @@
+<p>
+  <b>Articulo:</b>
+  <%=h @articulos_cliente.articulo_id %>
+</p>
+
+<p>
+  <b>Cliente:</b>
+  <%=h @articulos_cliente.cliente_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_articulos_cliente_path(@articulos_cliente) %> |
+<%= link_to 'Back', articulos_clientes_path %>

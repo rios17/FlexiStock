@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @departamento.name %>
+</p>
+
+<p>
+  <b>Pais:</b>
+  <%=h @departamento.pais_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_departamento_path(@departamento) %> |
+<%= link_to 'Back', departamentos_path %>

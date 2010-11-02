@@ -1,0 +1,23 @@
+<h1>Listado de Colores</h1>
+
+<table id="box-table-a">
+  <tr id="titulotr">
+    <th>Tipo color</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @colores.each do |color| %>
+  <tr>
+    <td><%=h color.tipo_color %></td>
+    <td><%= link_to 'ver', color %></td>
+    <td><%= link_to 'Editar', edit_color_path(color) %></td>
+    <td><%= link_to 'Eliminar', color, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo color', new_color_path %>

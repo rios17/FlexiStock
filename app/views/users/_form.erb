@@ -1,0 +1,14 @@
+<%= form.label :Usuario %><br />
+<%= form.text_field :login %><br />
+<br />
+<%= form.label :Contraseña, form.object.new_record? ? nil : "Cambiar la Contraseña" %><br />
+<%= form.password_field :password %><br />
+<br />
+<%= form.label :confirmar_comtraseña%><br />
+<%= form.password_field :password_confirmation %><br />
+<% for role in User::ROLES %>
+  <%= check_box_tag "user[roles][]", role, @user.roles.include?(role) %>
+  <%=h role.humanize %><br />
+<% end %>
+<%= hidden_field_tag "user[roles][]", "" %>
+

@@ -1,0 +1,22 @@
+<h1>Editar contacto: <%=@cliente.nombrecompleto%></h1>
+
+<% form_for :contacto, @contacto,
+:url => cliente_contacto_path(@cliente, @contacto),
+:html => {:method => :put} do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :descripcion %><br />
+    <%= f.text_field :descripcion %>
+  </p>
+  <p>
+    <%= f.label :tipo_contacto %><br />
+    <%= f.text_field :tipo_contacto %>
+  </p>
+
+  <p>
+    <%= f.submit 'Actualizar' %>
+  </p>
+<% end %>
+
+<%= link_to 'Atrás', cliente_contactos_path %>

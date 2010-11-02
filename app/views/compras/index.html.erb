@@ -1,0 +1,74 @@
+<h1 align="center">Listado  de compras de: <%=h @proveedor.nombres %></h1>
+<div align="center">
+<% form_tag request.path, :method => 'get' do %>
+<% content_tag :label do %>
+<b>Buscar compra: </b>
+<%= text_field_tag :search, params[:search],
+   { :class => "campo",
+                :size => 35,
+                :maxlength => 80,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" }%>
+<%= submit_tag "Consultar", :articulo => nil %>
+<% end %>
+<% end %>
+</div>
+<br></br>
+
+<table id="box-table-a">
+  <tr id="titulotr">
+    <th>Fecha</th>
+    <th>Articulo</th>
+    <th>Cantidad</th>
+    <th>Precio</th>
+    <th>Proveedor</th>
+  </tr>
+
+<% @compras.each do |compra| %>
+  <tr class="<%= cycle('odd','pair') %>">
+    <td><%=h compra.fecha %></td>
+    <td><%=h compra.articulo %></td>
+    <td><%=h compra.cantidad %></td>
+    <td><%=h compra.precio %></td>
+    <td><%=h compra.proveedor.nombres %></td>
+
+        <td>
+         <a href="/proveedores/<%=compra.proveedor_id.to_s%>/compras/<%=compra.id.to_s%>"
+          onclick="return GB_showCenter(' <%=compra.proveedor.nombres%>', this.href, 300, 600)">
+              <%= image_tag('find.png', { :border => 0, :title => "Ver compra" })%></a></td>
+
+          <td>
+         <a href="/proveedores/<%=compra.proveedor_id.to_s%>/compras/<%=compra.id.to_s%>/edit"
+          onclick="return GB_showCenter('Editar Compra de:  <%=compra.proveedor.nombres%>', this.href, 430, 600)">
+              <%= image_tag('edit.png', { :border => 0, :title => "Editar esta Compra" })%></a></td>
+
+      <td><%= link_to image_tag('cross.png',
+            {:border=>0,
+             :width=>15,
+             :height=>15,
+             :title => "Eliminar esta Compra"}),
+      proveedor_compra_path(@proveedor,compra), :confirm => 'Está usted seguro de Eliminar la compra?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+<div align="center">
+<%= will_paginate @compras, :previous_label => 'Anterior', :next_label => 'Siguiente' %>
+ Total Compras : <%= @compras.total_entries %> &nbsp;&nbsp;&nbsp;&nbsp;
+
+</div>
+<br />
+<div align="center">
+<a href="<%= new_proveedor_compra_path(@proveedor) %>"
+          onclick="return GB_showCenter('Agregar Nueva Compra', this.href, 460, 600)">
+              <%= image_tag('Agregar Compra', { :border => 0, :title => "Agregar Compra" })%></a>
+</div>
+<br></br>
+<div align="center">
+   <%= link_to image_tag('Atrás',
+             {:border=>0,
+             :width=>25,
+             :height=>25,
+             :title => "Atrás"}),
+    proveedores_path %>
+</div>

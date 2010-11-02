@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  fecha: 2010-09-27
+  articulo: MyString
+  cantidad: MyString
+  cantidad: MyString
+  precio: MyString
+  proveedor_id: 1
+
+two:
+  fecha: 2010-09-27
+  articulo: MyString
+  cantidad: MyString
+  cantidad: MyString
+  precio: MyString
+  proveedor_id: 1

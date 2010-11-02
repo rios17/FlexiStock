@@ -1,0 +1,106 @@
+<br></br>
+<table>
+
+  <td>
+    <table id="box-table-a">
+    <tr class="<%= cycle('pair','odd') %>">
+    <td>Foto</td>
+    <td><%= f.file_field :foto,{
+                         :size => 15,
+                         :maxlength => 60,
+                         :title => "Recuerde ingresar su foto",
+                         :onFocus => "this.style.border='1px solid #f00'",
+                         :onBlur => "this.style.border='1px solid #bbb'" }%>
+    </td>
+  </tr>
+
+    <tr class="<%= cycle('pair','odd') %>">
+  <td><%= f.label :nombre %></td>
+  <td><%= f.text_field :nombre,
+  { :class => "campo",
+                :size => 30,
+                :maxlength => 50,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" }%></td>
+  </tr>
+     <tr class="<%= cycle('pair','odd') %>">
+    <td><%= f.label :referencia %></td>
+    <td><%= f.text_field :referencia,
+  { :class => "campo",
+                :size => 30,
+                :maxlength => 50,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" }%></td>
+  </tr>
+     <tr class="<%= cycle('pair','odd') %>">
+    <td>Linea del Producto</td>
+    <td><select id="articulo_lineas_producto_id" name="articulo[lineas_producto_id]">
+<%= options_from_collection_for_select(@lineas_productos, "id", "descripcion", @articulo.lineas_producto_id ) %>
+      </select></td>
+ </tr>
+
+    <tr class="<%= cycle('pair','odd') %>">
+  <td><%= f.label :marca %></td>
+  <td><%= f.text_field :marca,
+  { :class => "campo",
+                :size => 30,
+                :maxlength => 50,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" }%></td>
+ </tr>
+    </table>
+  </td>
+  <td>
+    <table width="50">
+
+    </table>
+  </td>
+
+  <td>
+    <table id="box-table-a">
+  <tr class="<%= cycle('pair','odd') %>">
+      <td><%= f.label :peso%></td>
+      <td><%= f.text_field :peso,
+  { :class => "campo",
+                :size => 30,
+                :maxlength => 50,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" }%></td>
+   </tr>
+  <tr class="<%= cycle('pair','odd') %>">
+      <td><%= f.label :talla%></td>
+      <td><%= f.text_field :talla,
+  { :class => "campo",
+                :size => 30,
+                :maxlength => 50,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" }%></td>
+  </tr>
+   <tr class="<%= cycle('pair','odd') %>">
+      <td><%= f.label :lote%></td>
+      <td><%= f.text_field :lote,
+  { :class => "campo",
+                :size => 30,
+                :maxlength => 50,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" }%></td>
+  </tr>
+    <tr class="<%= cycle('pair','odd') %>">
+      <td><%= f.label :ubicacion%></td>
+      <td><%= f.text_field :ubicacion,
+  { :class => "campo",
+                :size => 30,
+                :maxlength => 50,
+                :onFocus => "this.style.border='1px solid #f00'",
+                :onBlur => "this.style.border='1px solid #bbb'" }%></td>
+  </tr>
+   <tr class="<%= cycle('pair','odd') %>">
+    <td>Color</td>
+    <td><select id="articulo_color_id" name="articulo[color_id]">
+         <%= options_from_collection_for_select(@colores, "id", "tipo_color", @articulo.color_id ) %>
+      </select></td>
+  </tr>
+    </table>
+  </td>
+
+</table>

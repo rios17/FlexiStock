@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  cantidad: 1
+  fecha: 2010-08-17 11:35:40
+  tipo_movimiento_id: 1
+  articulo_id: 1
+
+two:
+  cantidad: 1
+  fecha: 2010-08-17 11:35:40
+  tipo_movimiento_id: 1
+  articulo_id: 1

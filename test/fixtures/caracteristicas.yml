@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  marca: MyString
+  codigo_barras: MyString
+  peso_articulo: MyString
+  talla: MyString
+  lote: MyString
+  ubicacion: MyString
+  descripcion: MyString
+  articulo_id: 1
+  color_id: 1
+
+two:
+  marca: MyString
+  codigo_barras: MyString
+  peso_articulo: MyString
+  talla: MyString
+  lote: MyString
+  ubicacion: MyString
+  descripcion: MyString
+  articulo_id: 1
+  color_id: 1
